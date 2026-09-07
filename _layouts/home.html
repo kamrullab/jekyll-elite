@@ -1,0 +1,26 @@
+---
+layout: default
+---
+
+<section class="hero">
+  <p class="eyebrow">Modern Jekyll theme</p>
+  <h1>{{ page.heading | default: site.title }}</h1>
+  <p class="hero-copy">{{ page.description | default: site.description }}</p>
+</section>
+
+{{ content }}
+
+{% if site.posts.size > 0 %}
+<section aria-labelledby="latest-posts">
+  <h2 id="latest-posts">Latest posts</h2>
+  <div class="post-grid">
+    {% for post in site.posts %}
+      <article class="card">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time>
+        <h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3>
+        {% if post.description %}<p>{{ post.description }}</p>{% endif %}
+      </article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

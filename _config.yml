@@ -1,0 +1,21 @@
+title: Jekyll Elite
+description: A modern Jekyll theme for the web of 2026.
+url: ""
+baseurl: ""
+lang: en
+repository: kamrullab/jekyll-elite
+
+permalink: /:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - vendor
