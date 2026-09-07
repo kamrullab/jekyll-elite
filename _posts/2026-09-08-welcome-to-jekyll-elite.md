@@ -1,6 +1,7 @@
 ---
 title: Welcome to Jekyll Elite
 description: The first post in the Jekyll Elite starter.
+date: 2026-09-08 00:00:00 +0600
 author: KAMRUL HOSSAIN
 tags:
   - Jekyll

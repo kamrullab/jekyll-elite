@@ -4,6 +4,8 @@ A modern, accessible Jekyll theme for the web of 2026.
 
 Jekyll Elite is a lightweight foundation for blogs and content-focused sites. It uses semantic Liquid templates, responsive SCSS, and a small vanilla JavaScript color-theme control—without a frontend framework.
 
+[View the live preview](https://kamrullab.github.io/jekyll-elite/)
+
 ## Features
 
 - Responsive home, archive, page, post, and 404 layouts
@@ -26,7 +28,7 @@ bundle install
 bundle exec jekyll serve --livereload
 ```
 
-Open `http://localhost:4000`.
+Open `http://localhost:4000/jekyll-elite/`.
 
 ## Use as a theme
 
@@ -56,8 +58,8 @@ The repository's `_config.yml` contains working defaults. Common options are:
 ```yaml
 title: Jekyll Elite
 description: A modern Jekyll theme for the web of 2026.
-url: ""
-baseurl: ""
+url: https://kamrullab.github.io
+baseurl: /jekyll-elite
 lang: en
 
 author:
@@ -68,7 +70,7 @@ theme_mode: system # system, light, or dark
 show_excerpts: true
 ```
 
-Set `url` to the production origin. Use `baseurl` only when the site is served below a path, such as `/repository-name`.
+Set `url` to the production origin. Use `baseurl` when the site is served below a path. The included values target this repository's GitHub Pages deployment; replace them when using the theme elsewhere.
 
 Edit `_data/navigation.yml` to change primary navigation:
 
