@@ -1,0 +1,82 @@
+---
+layout: default
+---
+
+<section class="showcase-hero">
+  <div class="showcase-copy">
+    <p class="eyebrow">Multipurpose Jekyll system · 2026</p>
+    <h1>One theme.<br><span>Every story.</span></h1>
+    <p class="hero-copy">{{ page.description }}</p>
+    <div class="button-row">
+      <a class="button button-primary" href="{{ '/patterns/' | relative_url }}">Explore every pattern</a>
+      <a class="button button-secondary" href="https://github.com/kamrullab/jekyll-elite">View source</a>
+    </div>
+  </div>
+  <div class="hero-canvas" aria-label="Jekyll Elite supports multiple kinds of sites">
+    <div class="canvas-core"><span>JE</span><small>Jekyll Elite</small></div>
+    <span class="orbit-chip chip-one">Portfolio</span>
+    <span class="orbit-chip chip-two">Docs</span>
+    <span class="orbit-chip chip-three">Editorial</span>
+    <span class="orbit-chip chip-four">Product</span>
+  </div>
+</section>
+
+<section class="proof-strip" aria-label="Theme capabilities">
+  <div><strong>{{ site.data.site_types.size }}</strong><span>site patterns</span></div>
+  <div><strong>{{ site.layouts.size }}</strong><span>working layouts</span></div>
+  <div><strong>3</strong><span>content flows</span></div>
+  <div><strong>0</strong><span>frameworks</span></div>
+</section>
+
+<section class="section-block" aria-labelledby="built-for">
+  <div class="section-intro">
+    <p class="eyebrow">Built for more</p>
+    <h2 id="built-for">Choose the shape your content needs.</h2>
+    <p>Jekyll Elite includes distinct information structures—not just different labels on the same blog page.</p>
+  </div>
+  <div class="pattern-grid pattern-grid-preview">
+    {% for type in site.data.site_types limit: 8 %}
+      <a class="pattern-card" href="{{ type.url | relative_url }}">
+        <span class="pattern-number">{{ type.icon }}</span>
+        <h3>{{ type.title }}</h3>
+        <p>{{ type.description }}</p>
+        <span class="card-arrow" aria-hidden="true">↗</span>
+      </a>
+    {% endfor %}
+  </div>
+  <p class="section-action"><a class="text-link" href="{{ '/patterns/' | relative_url }}">See all {{ site.data.site_types.size }} patterns →</a></p>
+</section>
+
+<section class="section-block split-feature" aria-labelledby="content-systems">
+  <div>
+    <p class="eyebrow">Content systems</p>
+    <h2 id="content-systems">Publishing, projects, and docs work together.</h2>
+  </div>
+  <div class="stack-list">
+    <a href="{{ '/blog/' | relative_url }}"><span>01</span><strong>Posts</strong><small>Editorial and technical publishing</small></a>
+    <a href="{{ '/portfolio/' | relative_url }}"><span>02</span><strong>Projects</strong><small>Portfolio and case-study content</small></a>
+    <a href="{{ '/docs/' | relative_url }}"><span>03</span><strong>Documentation</strong><small>Guides with structured navigation</small></a>
+  </div>
+</section>
+
+{% if site.projects.size > 0 %}
+<section class="section-block" aria-labelledby="selected-work">
+  <div class="section-heading">
+    <div><p class="eyebrow">Project collection</p><h2 id="selected-work">Selected work</h2></div>
+    <a href="{{ '/portfolio/' | relative_url }}">View portfolio</a>
+  </div>
+  <div class="project-grid">
+    {% assign featured_projects = site.projects | where: "featured", true %}
+    {% for project in featured_projects limit: 3 %}
+      {% include project-card.html project=project %}
+    {% endfor %}
+  </div>
+</section>
+{% endif %}
+
+<section class="final-cta">
+  <p class="eyebrow">Start with structure</p>
+  <h2>Make it personal. Make it useful. Make it yours.</h2>
+  <p>Use a complete pattern or combine layouts, collections, and components into a site that fits.</p>
+  <a class="button button-primary" href="{{ '/docs/getting-started/' | relative_url }}">Read the guide</a>
+</section>

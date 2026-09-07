@@ -1,5 +1,11 @@
 - title: Home
   url: /
+- title: Patterns
+  url: /patterns/
+- title: Work
+  url: /portfolio/
+- title: Docs
+  url: /docs/
 - title: Blog
   url: /blog/
 - title: About

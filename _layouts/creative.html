@@ -1,0 +1,9 @@
+---
+layout: default
+---
+
+<header class="creative-hero"><p class="eyebrow">{{ page.kicker }}</p><h1>{{ page.title }}</h1><p>{{ page.description }}</p></header>
+<div class="creative-grid">
+  {% assign projects = site.projects | sort: "order" %}
+  {% for project in projects %}<a class="creative-tile accent-{{ project.accent }}" href="{{ project.url | relative_url }}"><span class="creative-mark">{{ project.monogram }}</span><div><small>{{ project.category }}</small><h2>{{ project.title }}</h2></div></a>{% endfor %}
+</div>

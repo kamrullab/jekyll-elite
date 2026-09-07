@@ -1,0 +1,10 @@
+{% assign project = include.project %}
+<article class="project-card{% if project.accent %} accent-{{ project.accent }}{% endif %}">
+  <div class="project-visual" aria-hidden="true"><span>{{ project.monogram | default: "JE" }}</span></div>
+  <div class="project-card-body">
+    {% if project.category %}<p class="eyebrow">{{ project.category }}</p>{% endif %}
+    <h3><a href="{{ project.url | relative_url }}">{{ project.title }}</a></h3>
+    <p>{{ project.description }}</p>
+    {% if project.technologies %}<p class="project-tech">{{ project.technologies | join: " · " }}</p>{% endif %}
+  </div>
+</article>

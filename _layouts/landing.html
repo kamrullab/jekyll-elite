@@ -1,0 +1,27 @@
+---
+layout: default
+---
+
+<section class="landing-hero">
+  <p class="eyebrow">{{ page.kicker }}</p>
+  <h1>{{ page.headline | default: page.title }}</h1>
+  <p class="hero-copy">{{ page.description }}</p>
+  <div class="button-row">
+    {% if page.primary_action %}<a class="button button-primary" href="{% if page.primary_action.url contains '://' %}{{ page.primary_action.url }}{% else %}{{ page.primary_action.url | relative_url }}{% endif %}">{{ page.primary_action.label }}</a>{% endif %}
+    {% if page.secondary_action %}<a class="button button-secondary" href="{% if page.secondary_action.url contains '://' %}{{ page.secondary_action.url }}{% else %}{{ page.secondary_action.url | relative_url }}{% endif %}">{{ page.secondary_action.label }}</a>{% endif %}
+  </div>
+</section>
+
+{% if page.features %}
+<section class="feature-bento" aria-label="Features">
+  {% for feature in page.features %}
+    <article class="feature-panel{% if forloop.first %} feature-panel-large{% endif %}"><span>{{ forloop.index | prepend: "0" }}</span><h2>{{ feature.title }}</h2><p>{{ feature.description }}</p></article>
+  {% endfor %}
+</section>
+{% endif %}
+
+{% if content != empty %}<section class="landing-content prose">{{ content }}</section>{% endif %}
+
+{% if page.final_action %}
+  <section class="final-cta"><p class="eyebrow">{{ page.final_action.kicker }}</p><h2>{{ page.final_action.title }}</h2><p>{{ page.final_action.description }}</p><a class="button button-primary" href="{% if page.final_action.url contains '://' %}{{ page.final_action.url }}{% else %}{{ page.final_action.url | relative_url }}{% endif %}">{{ page.final_action.label }}</a></section>
+{% endif %}

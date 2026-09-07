@@ -1,0 +1,16 @@
+---
+layout: default
+---
+
+<header class="profile-hero">
+  <div class="profile-mark" aria-hidden="true">{{ page.monogram | default: site.author.name | slice: 0 }}</div>
+  <div><p class="eyebrow">{{ page.kicker | default: "Personal website" }}</p><h1>{{ page.title }}</h1><p class="lead">{{ page.description }}</p></div>
+</header>
+
+<div class="profile-grid">
+  <article class="prose">{{ content }}</article>
+  <aside>
+    {% if page.focus %}<section><h2>Focus</h2><ul class="skill-list">{% for item in page.focus %}<li>{{ item }}</li>{% endfor %}</ul></section>{% endif %}
+    {% if page.links %}<section><h2>Elsewhere</h2>{% for link in page.links %}<p><a href="{{ link.url }}">{{ link.label }} ↗</a></p>{% endfor %}</section>{% endif %}
+  </aside>
+</div>

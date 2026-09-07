@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<header class="resume-header">
+  <div><p class="eyebrow">Resume / CV</p><h1>{{ page.person }}</h1>{% if page.role %}<p class="lead">{{ page.role }}</p>{% endif %}</div>
+  <div class="resume-contact">{% for link in page.links %}<a href="{{ link.url }}">{{ link.label }}</a>{% endfor %}</div>
+</header>
+
+<div class="resume-grid">
+  <main>
+    {% if page.experience %}<section><h2>Experience</h2>{% for item in page.experience %}<article class="timeline-item"><p class="timeline-date">{{ item.period }}</p><div><h3>{{ item.role }}</h3><p class="muted">{{ item.organization }}</p><p>{{ item.description }}</p></div></article>{% endfor %}</section>{% endif %}
+    {% if content != empty %}<section class="prose">{{ content }}</section>{% endif %}
+  </main>
+  <aside>
+    {% if page.skills %}<section><h2>Capabilities</h2><ul class="skill-list">{% for skill in page.skills %}<li>{{ skill }}</li>{% endfor %}</ul></section>{% endif %}
+    {% if page.education %}<section><h2>Education</h2>{% for item in page.education %}<h3>{{ item.title }}</h3><p>{{ item.place }}</p>{% endfor %}</section>{% endif %}
+  </aside>
+</div>

@@ -1,0 +1,31 @@
+---
+layout: default
+---
+
+<header class="portfolio-hero">
+  <div>
+    <p class="eyebrow">{{ page.kicker | default: "Selected work" }}</p>
+    <h1>{{ page.title }}</h1>
+  </div>
+  <p class="lead">{{ page.description }}</p>
+</header>
+
+{% if content != empty %}<div class="prose portfolio-intro">{{ content }}</div>{% endif %}
+
+<section class="project-grid project-grid-large" aria-label="Projects">
+  {% assign ordered_projects = site.projects | sort: "order" %}
+  {% for project in ordered_projects %}
+    {% include project-card.html project=project %}
+  {% endfor %}
+</section>
+
+{% if page.show_posts and site.posts.size > 0 %}
+<section class="section-block" aria-labelledby="developer-notes">
+  <div class="section-heading"><h2 id="developer-notes">Technical notes</h2><a href="{{ '/blog/' | relative_url }}">All posts</a></div>
+  <div class="post-grid">
+    {% for post in site.posts limit: 3 %}
+      <article class="card"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %-d, %Y" }}</time><h3><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h3><p>{{ post.description }}</p></article>
+    {% endfor %}
+  </div>
+</section>
+{% endif %}

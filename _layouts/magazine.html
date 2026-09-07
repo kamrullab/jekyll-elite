@@ -1,0 +1,15 @@
+---
+layout: default
+---
+
+<header class="magazine-masthead"><p>{{ page.kicker }}</p><h1>{{ page.title }}</h1><span>{{ site.time | date: "%B %Y" }}</span></header>
+{% assign lead_post = site.posts.first %}
+{% if lead_post %}
+<section class="editorial-lead">
+  <a class="editorial-art" href="{{ lead_post.url | relative_url }}"><span>JE</span></a>
+  <div><p class="eyebrow">Lead story</p><h2><a href="{{ lead_post.url | relative_url }}">{{ lead_post.title }}</a></h2><p class="lead">{{ lead_post.description }}</p><p class="post-meta">{{ lead_post.date | date: "%B %-d, %Y" }}</p></div>
+</section>
+{% endif %}
+<section class="editorial-grid" aria-label="Recent stories">
+  {% for post in site.posts offset: 1 %}<article><p class="eyebrow">{{ post.tags.first | default: "Story" }}</p><h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2><p>{{ post.description }}</p></article>{% else %}<article><p>Add more posts to populate this editorial grid.</p></article>{% endfor %}
+</section>

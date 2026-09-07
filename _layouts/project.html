@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<article>
+  <header class="project-hero accent-{{ page.accent | default: 'violet' }}">
+    <div>
+      <p class="eyebrow">{{ page.category | default: "Project" }}</p>
+      <h1>{{ page.title }}</h1>
+      <p class="lead">{{ page.description }}</p>
+      {% if page.technologies %}<p class="project-tech">{{ page.technologies | join: " · " }}</p>{% endif %}
+    </div>
+    <div class="project-monogram" aria-hidden="true">{{ page.monogram | default: "JE" }}</div>
+  </header>
+  <div class="case-study-grid">
+    <aside>
+      {% if page.role %}<div><span>Role</span><strong>{{ page.role }}</strong></div>{% endif %}
+      {% if page.year %}<div><span>Year</span><strong>{{ page.year }}</strong></div>{% endif %}
+      {% if page.repository %}<div><span>Source</span><a href="{{ page.repository }}">Repository ↗</a></div>{% endif %}
+    </aside>
+    <div class="prose">{{ content }}</div>
+  </div>
+</article>

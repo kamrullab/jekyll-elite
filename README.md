@@ -1,14 +1,16 @@
 # Jekyll Elite
 
-A modern, accessible Jekyll theme for the web of 2026.
+A modern, accessible, multipurpose Jekyll theme for the web of 2026.
 
-Jekyll Elite is a lightweight foundation for blogs and content-focused sites. It uses semantic Liquid templates, responsive SCSS, and a small vanilla JavaScript color-theme control—without a frontend framework.
+Jekyll Elite is a flexible foundation for personal and developer sites, blogs, portfolios, project showcases, documentation, landing pages, open-source projects, resumes, editorial publications, products, creative work, and technical writing. It uses semantic Liquid templates, responsive SCSS, and small vanilla JavaScript enhancements—without a frontend framework.
 
 [View the live preview](https://kamrullab.github.io/jekyll-elite/)
 
 ## Features
 
-- Responsive home, archive, page, post, and 404 layouts
+- Dedicated showcase, profile, portfolio, project, docs, landing, resume, magazine, creative, blog, page, post, and 404 layouts
+- Working previews for every supported site pattern
+- Reusable posts, projects, and documentation collections
 - Light, dark, and system color preferences with local persistence
 - Configurable navigation and social links through `_data`
 - Post excerpts, reading time, tags, and previous/next navigation
@@ -94,10 +96,12 @@ Create posts in `_posts` using the `YYYY-MM-DD-title.md` filename format. The `p
 ## Project structure
 
 ```text
-_data/        Navigation and social-link data
-_includes/    Head, header, and footer partials
-_layouts/     Default, home, archive, page, and post templates
-_posts/       Preview content
+_data/        Navigation, social links, and site-pattern data
+_docs/        Ordered documentation pages
+_includes/    Shared head, navigation, footer, and project cards
+_layouts/     Multipurpose page and content templates
+_posts/       Blog, editorial, and technical writing
+_projects/    Portfolio entries and project case studies
 _sass/        Theme source styles
 assets/       Compiled stylesheet entry point, JavaScript, and images
 lib/          Theme version

@@ -12,6 +12,14 @@ author:
 theme_mode: system
 show_excerpts: true
 
+collections:
+  projects:
+    output: true
+    permalink: /work/:name/
+  docs:
+    output: true
+    permalink: /docs/:name/
+
 permalink: /:year/:month/:day/:title/
 
 plugins:
@@ -31,6 +39,16 @@ defaults:
       type: posts
     values:
       layout: post
+  - scope:
+      path: ""
+      type: projects
+    values:
+      layout: project
+  - scope:
+      path: ""
+      type: docs
+    values:
+      layout: docs
 
 exclude:
   - Gemfile

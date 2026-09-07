@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class="docs-shell">
+  <aside class="docs-sidebar">
+    <a class="docs-home" href="{{ '/docs/' | relative_url }}">Documentation</a>
+    <nav aria-label="Documentation sections">
+      {% assign docs = site.docs | sort: "order" %}
+      {% for doc in docs %}<a href="{{ doc.url | relative_url }}"{% if page.url == doc.url %} aria-current="page"{% endif %}>{{ doc.title }}</a>{% endfor %}
+    </nav>
+  </aside>
+  <article class="prose docs-content">
+    <header class="page-header"><p class="eyebrow">Guide</p><h1>{{ page.title }}</h1>{% if page.description %}<p class="lead">{{ page.description }}</p>{% endif %}</header>
+    {{ content }}
+  </article>
+</div>

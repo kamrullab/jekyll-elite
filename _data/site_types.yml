@@ -1,0 +1,52 @@
+- title: Personal websites
+  description: A focused home for an identity, story, links, and writing.
+  url: /about/
+  icon: "01"
+- title: Developer websites
+  description: Skills, selected work, technical writing, and open-source activity.
+  url: /developer/
+  icon: "02"
+- title: Blogs
+  description: Chronological publishing with excerpts, tags, and reading time.
+  url: /blog/
+  icon: "03"
+- title: Portfolios
+  description: Case-study driven work with project collections and detail pages.
+  url: /portfolio/
+  icon: "04"
+- title: Project showcases
+  description: Feature a single build or organize a complete body of work.
+  url: /work/jekyll-elite/
+  icon: "05"
+- title: Documentation
+  description: Structured guides with persistent section navigation.
+  url: /docs/
+  icon: "06"
+- title: Landing pages
+  description: Conversion-focused hero, benefits, proof, and calls to action.
+  url: /landing/
+  icon: "07"
+- title: Open-source projects
+  description: Explain the project, installation, community, and repository.
+  url: /open-source/
+  icon: "08"
+- title: Resume and CV
+  description: Experience, capabilities, selected work, and contact links.
+  url: /resume/
+  icon: "09"
+- title: News and magazines
+  description: Editorial hierarchy for featured stories and recent coverage.
+  url: /magazine/
+  icon: "10"
+- title: Product pages
+  description: Present a product through outcomes, capabilities, and next steps.
+  url: /product/
+  icon: "11"
+- title: Creative websites
+  description: Expressive compositions for visual work and experiments.
+  url: /creative/
+  icon: "12"
+- title: Technical blogs
+  description: Long-form posts with code, metadata, and readable typography.
+  url: /2026/09/08/welcome-to-jekyll-elite/
+  icon: "13"

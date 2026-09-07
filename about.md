@@ -1,10 +1,23 @@
 ---
-layout: page
-title: About
-description: About this starter theme.
+layout: profile
+title: KAMRUL HOSSAIN
+kicker: Personal website pattern
+description: Maintainer of Jekyll Elite, an open-source multipurpose theme.
+monogram: KH
 permalink: /about/
+focus:
+  - Jekyll themes
+  - Accessible interfaces
+  - Open-source projects
+links:
+  - label: GitHub
+    url: https://github.com/kamrullab
+  - label: Jekyll Elite
+    url: https://github.com/kamrullab/jekyll-elite
 ---
 
-Jekyll Elite is an early-stage Jekyll theme focused on a clear structure, readable content, and straightforward customization.
+## A personal home on the web
 
-Edit `_config.yml` for site metadata, Markdown files for content, layouts and includes for markup, and `assets/css/main.scss` for presentation.
+This profile layout combines an introduction, long-form story, areas of focus, and selected links without forcing the content into a blog homepage.
+
+Jekyll Elite is built in public as a flexible foundation for different kinds of static sites. The same content primitives can be rearranged into a portfolio, documentation hub, publication, resume, or product story.
