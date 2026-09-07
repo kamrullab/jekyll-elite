@@ -1,23 +1,23 @@
 # Jekyll Elite
 
-A small, modern Jekyll theme starter for the web of 2026.
+A modern, accessible Jekyll theme for the web of 2026.
 
-## Overview
-
-Jekyll Elite provides a clean foundation for a content-focused site without a frontend framework. It uses Jekyll and Liquid for static generation, SCSS for styling, and a small JavaScript enhancement for color-theme switching.
+Jekyll Elite is a lightweight foundation for blogs and content-focused sites. It uses semantic Liquid templates, responsive SCSS, and a small vanilla JavaScript color-theme control—without a frontend framework.
 
 ## Features
 
-- Responsive home, page, post, and 404 layouts
-- Reusable header and footer includes
-- Light and dark color themes with saved visitor preference
-- Semantic markup, a skip link, visible focus styles, and reduced-motion support
-- Markdown posts with dates and descriptions
-- `baseurl`-safe internal asset and navigation links
+- Responsive home, archive, page, post, and 404 layouts
+- Light, dark, and system color preferences with local persistence
+- Configurable navigation and social links through `_data`
+- Post excerpts, reading time, tags, and previous/next navigation
+- SEO metadata, Atom feed, and sitemap generation
+- Skip navigation, visible focus states, semantic landmarks, and reduced-motion support
+- SVG favicon and `baseurl`-safe internal links
+- Theme gem packaging, continuous integration, and GitHub Pages deployment
 
 ## Quick start
 
-Install Ruby, RubyGems, Git, and Bundler, then run:
+Install Ruby, RubyGems, Git, and Bundler, then clone the project:
 
 ```bash
 git clone https://github.com/kamrullab/jekyll-elite.git
@@ -28,46 +28,103 @@ bundle exec jekyll serve --livereload
 
 Open `http://localhost:4000`.
 
-## Configuration
+## Use as a theme
 
-Edit `_config.yml` to set the site title, description, language, canonical `url`, and optional `baseurl`. Restart the development server after changing Jekyll configuration.
+Jekyll Elite is not published to RubyGems yet. To use the current GitHub version in another Jekyll site, add it to that site's `Gemfile`:
 
-Add posts to `_posts` with a filename in `YYYY-MM-DD-title.md` format:
+```ruby
+gem "jekyll-elite", github: "kamrullab/jekyll-elite"
+```
+
+Then configure the theme and its included plugins in `_config.yml`:
 
 ```yaml
----
-title: Post title
-description: A short summary.
----
+theme: jekyll-elite
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
 ```
+
+Run `bundle install`, then start the site with `bundle exec jekyll serve`.
+
+## Configuration
+
+The repository's `_config.yml` contains working defaults. Common options are:
+
+```yaml
+title: Jekyll Elite
+description: A modern Jekyll theme for the web of 2026.
+url: ""
+baseurl: ""
+lang: en
+
+author:
+  name: KAMRUL HOSSAIN
+  url: https://github.com/kamrullab
+
+theme_mode: system # system, light, or dark
+show_excerpts: true
+```
+
+Set `url` to the production origin. Use `baseurl` only when the site is served below a path, such as `/repository-name`.
+
+Edit `_data/navigation.yml` to change primary navigation:
+
+```yaml
+- title: Home
+  url: /
+- title: Blog
+  url: /blog/
+```
+
+Edit `_data/social.yml` to change footer links:
+
+```yaml
+- title: GitHub
+  url: https://github.com/your-account
+```
+
+Create posts in `_posts` using the `YYYY-MM-DD-title.md` filename format. The `post` layout accepts `title`, `description`, `author`, and `tags` front matter.
 
 ## Project structure
 
 ```text
-_includes/    Shared header and footer
-_layouts/     Home, page, post, and default templates
-_posts/       Markdown blog posts
-assets/       SCSS and JavaScript
-_config.yml   Site and build configuration
+_data/        Navigation and social-link data
+_includes/    Head, header, and footer partials
+_layouts/     Default, home, archive, page, and post templates
+_posts/       Preview content
+_sass/        Theme source styles
+assets/       Compiled stylesheet entry point, JavaScript, and images
+lib/          Theme version
 ```
 
 ## Development
 
 ```bash
-# Run locally with automatic browser refresh
+# Start the local server with automatic refresh
 bundle exec jekyll serve --livereload
 
-# Generate the static site in _site/
-bundle exec jekyll build
+# Build the preview site with strict front matter checks
+bundle exec jekyll build --strict_front_matter
+
+# Check configuration for common problems
+bundle exec jekyll doctor
+
+# Build the theme gem in pkg/
+bundle exec rake build
 ```
 
-Ruby and Jekyll are not bundled with the repository. The initial build has not been executed in this workspace because those tools are not installed here.
+The generated site is written to `_site/`. Build artifacts and Bundler-installed dependencies are ignored by Git.
+
+## GitHub Pages
+
+The Pages workflow builds and deploys the preview site after pushes to `main`. In the repository settings, choose **GitHub Actions** as the Pages source. The workflow derives the correct project `baseurl` from GitHub Pages, so no repository-specific path is hard-coded.
 
 ## Contributing
 
-Contributions are welcome. Keep changes focused, run `bundle exec jekyll build`, and include documentation for any user-facing configuration or behavior you add.
-
-Use the [GitHub repository](https://github.com/kamrullab/jekyll-elite) to report issues or propose changes.
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening a pull request. Bug reports and feature requests can be submitted through the repository's issue templates. Report security issues privately as described in [SECURITY.md](SECURITY.md).
 
 ## License
 
@@ -75,4 +132,4 @@ Jekyll Elite is available under the [MIT License](LICENSE).
 
 ## Status
 
-Jekyll Elite is an early starter implementation. It is suitable for experimentation and continued theme development, but it is not yet packaged as a Ruby gem.
+Jekyll Elite is in early development. Version `0.1.0` provides the initial usable theme and preview site; the gem has not yet been published to RubyGems.

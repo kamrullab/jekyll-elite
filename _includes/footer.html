@@ -1,5 +1,10 @@
 <footer class="site-footer">
-  <div class="container">
-    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.title }}.</p>
+  <div class="container footer-inner">
+    <p>&copy; {{ 'now' | date: '%Y' }} {{ site.author.name | default: site.title }}.</p>
+    {% if site.data.social %}
+      <nav class="social-links" aria-label="Social links">
+        {% for item in site.data.social %}<a href="{{ item.url }}" rel="me">{{ item.title }}</a>{% endfor %}
+      </nav>
+    {% endif %}
   </div>
 </footer>

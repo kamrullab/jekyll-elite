@@ -4,8 +4,25 @@ url: ""
 baseurl: ""
 lang: en
 repository: kamrullab/jekyll-elite
+author:
+  name: KAMRUL HOSSAIN
+  url: https://github.com/kamrullab
+
+theme_mode: system
+show_excerpts: true
 
 permalink: /:year/:month/:day/:title/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+feed:
+  path: feed.xml
+
+sass:
+  style: compressed
 
 defaults:
   - scope:
@@ -17,5 +34,10 @@ defaults:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - jekyll-elite.gemspec
+  - Rakefile
   - README.md
+  - CONTRIBUTING.md
+  - SECURITY.md
+  - CHANGELOG.md
   - vendor
