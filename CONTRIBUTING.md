@@ -13,7 +13,6 @@ Before opening a pull request, run:
 
 ```bash
 bundle exec jekyll build --strict_front_matter
-bundle exec jekyll doctor
 bundle exec rake build
 ```
 

@@ -109,9 +109,6 @@ bundle exec jekyll serve --livereload
 # Build the preview site with strict front matter checks
 bundle exec jekyll build --strict_front_matter
 
-# Check configuration for common problems
-bundle exec jekyll doctor
-
 # Build the theme gem in pkg/
 bundle exec rake build
 ```
