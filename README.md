@@ -61,6 +61,7 @@ description: A modern Jekyll theme for the web of 2026.
 url: https://kamrullab.github.io
 baseurl: /jekyll-elite
 lang: en
+timezone: Asia/Dhaka
 
 author:
   name: KAMRUL HOSSAIN
